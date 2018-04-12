@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import friends from "./friends.json";
 import "./App.css";
 
@@ -21,8 +23,10 @@ class App extends Component {
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
+      <div>
+     <Navbar></Navbar>
+      <Title></Title>
       <Wrapper >
-        <Title>Clicky Color Dot</Title>
         {this.state.friends.map(friend => (
           <FriendCard
             removeFriend={this.removeFriend}
@@ -32,6 +36,8 @@ class App extends Component {
           />
         ))}
       </Wrapper>
+      <Footer>&copy; Copyright Susan Marek</Footer>
+      </div>
     );
   }
 }
