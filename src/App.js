@@ -20,6 +20,23 @@ class App extends Component {
     this.setState({ friends });
   };
 
+  shuffle = function() {
+  var input = this;
+   
+  for (var i = input.length-1; i >=0; i--) {
+   
+      var randomIndex = Math.floor(Math.random()*(i+1)); 
+      var itemAtIndex = input[randomIndex]; 
+       
+      input[randomIndex] = input[i]; 
+      input[i] = itemAtIndex;
+  }
+  return input;
+  };
+  
+
+
+
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
@@ -28,8 +45,11 @@ class App extends Component {
       <Title></Title>
       <Wrapper >
         {this.state.friends.map(friend => (
+          
+
           <FriendCard
-            removeFriend={this.removeFriend}
+            // removeFriend={this.removeFriend}
+            
             id={friend.id}
             key={friend.id}
             image={friend.image}
