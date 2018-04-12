@@ -5,7 +5,5 @@ footer {
 	padding-top: 30px;
 	color: white;
 	font-size: 10px;
-	border-width: 3px;
-	border-top: 3px;
-	border-color: white;
+	border-top: 4px solid white;
 }

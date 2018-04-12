@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import FriendCard from "./components/FriendCard";
+import LetterCard from "./components/LetterCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import friends from "./friends.json";
+import letters from "./letters.json";
 import "./App.css";
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends
+    letters
   };
 
   removeFriend = id => {
@@ -44,15 +44,15 @@ class App extends Component {
      <Navbar></Navbar>
       <Title></Title>
       <Wrapper >
-        {this.state.friends.map(friend => (
+        {this.state.letters.map(oneletter => (
           
 
-          <FriendCard
+          <LetterCard
             // removeFriend={this.removeFriend}
             
-            id={friend.id}
-            key={friend.id}
-            image={friend.image}
+            id={oneletter.id}
+            key={oneletter.id}
+            image={oneletter.image}
           />
         ))}
       </Wrapper>
