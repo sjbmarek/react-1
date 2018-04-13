@@ -8,10 +8,6 @@ import letters from "./letters.json";
 import "./App.css";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
-  // state = {
-  //   letters
-  // };
 
   state = {
     message: "Click a letter to begin!",
@@ -24,13 +20,6 @@ class App extends Component {
   componentDidMount() {
   }
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  };
-
   shuffle = array => {
       for (let i = array.length - 1; i > 0; i--) {
           let j = Math.floor(Math.random() * (i + 1));
@@ -41,10 +30,10 @@ class App extends Component {
   selectLetter = id => {
   // Find this.state.unselectedletters for letter with an id equal to the id being clicked
   const findLetter = this.state.unselectedletters.find(item => item.id === id);
-  // Set this.state.unselectedletter equal to the new friends array
+  // Set this.state.unselectedletter equal to the new letter array
    if(findLetter === undefined) {
 
-        // failure to select a new dog
+        // failure to select a new letter
       this.setState({ 
           message: "INCORRECT!",
           topScore: (this.state.currentScore > this.state.topScore) ? this.state.currentScore : this.state.topScore,
@@ -53,9 +42,21 @@ class App extends Component {
           unselectedletters: letters
       });
     }
+ else{
+    // selected a new letter
+    const newLetters = this.state.unselectedletters.filter(item => item.id !== id);
+
+    this.setState ({
+      message: "CORRECT!",
+      currentScore:this.state.currentScore + 1,
+      letters: letters,
+      unselectedletters: newLetters
+    });
 
  }
   
+  this.shuffle(letters);
+};
 
 
 
@@ -78,6 +79,8 @@ class App extends Component {
             id={oneletter.id}
             key={oneletter.id}
             image={oneletter.image}
+            selectLetter={this.selectLetter}
+            currentScore={this.state.currentScore}
           />
         ))}
       </Wrapper>

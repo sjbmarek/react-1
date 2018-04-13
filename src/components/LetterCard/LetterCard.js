@@ -3,7 +3,7 @@ import "./LetterCard.css";
 
 const LetterCard = props => (
   <div className="card">
-    <div className="img-container"  onClick={props.somefunction}>
+    <div className="img-container"  onClick={() =>props.selectLetter(props.id)}>
       <img alt={props.name} src={props.image} />
     </div>
 
