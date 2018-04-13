@@ -8,9 +8,9 @@ This app is a memory game with React. This project required breaking up the appl
 
 2. The application renders different images to the screen. Each image listens for click events.
 
-3. The application tracks the user's score. The user's score should be incremented when clicking an image for the first time. The user's score should be reset to 0 if the same image is clicked more than once.
+3. The application tracks the user's score. The user's score is incremented when clicking an image for the first time. The user's score should be reset to 0 if the same image is clicked more than once.
 
-4. Every time an image is clicked, the images rendered to the page should shuffle themselves in a random order.
+4. Every time an image is clicked, the images rendered to the page should shuffle in a random order.
 
 5. After an incorrect guess, the game restarts.
 
