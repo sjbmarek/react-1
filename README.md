@@ -4,7 +4,7 @@
 
 This app is a memory game with React. This project required breaking up the application's UI into components, manage component state, and respond to user events. It's made by following up the instruction below: 
 
-1. Thisis a React application.
+1. This is a React application.
 
 2. The application renders different images to the screen. Each image listens for click events.
 
